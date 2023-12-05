@@ -1,3 +1,7 @@
+:root {
+	--animation-time: 0.2s;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -6,7 +10,8 @@ body {
 	height: 100vh;
 	background-color: #f2f2f2;
 	color: #333;
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color var(--animation-time),
+		color var(--animation-time);
 }
 
 .dark-theme {
@@ -22,7 +27,8 @@ input[type="text"] {
 	width: 300px;
 	background-color: #fff;
 	color: #333;
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color var(--animation-time),
+		color var(--animation-time);
 }
 
 .dark-theme input[type="text"] {
@@ -39,7 +45,8 @@ pre {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	color: #333;
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color var(--animation-time),
+		color var(--animation-time);
 }
 
 .dark-theme pre {
@@ -70,4 +77,12 @@ code {
 	background-color: #4b4b4b;
 	color: #e0e0e0;
 	border: 1px solid #e0e0e0;
+}
+
+#pre-result:hover {
+	background-color: rgb(119, 230, 230);
+}
+
+.dark-theme #pre-result:hover {
+	background-color: rgb(74, 145, 145);
 }

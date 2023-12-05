@@ -27,7 +27,13 @@ window.onload = function () {
 
 	toggleBtn.addEventListener("click", () => {
 		body.classList.toggle("dark-theme");
-		toggleBtn.innerHTML = "light";
+		toggleBtn.innerHTML = body.classList.contains("dark-theme")
+			? "light"
+			: "dark";
+	});
+
+	result.addEventListener("click", () => {
+		navigator.clipboard.writeText(result.innerText);
 	});
 };
 
