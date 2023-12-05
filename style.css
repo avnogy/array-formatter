@@ -81,7 +81,7 @@ code {
 
 #pre-result:hover {
 	background-color: rgb(119, 230, 230);
-    cursor:copy;
+	cursor: copy;
 }
 
 .dark-theme #pre-result:hover {

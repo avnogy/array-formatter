@@ -30,7 +30,15 @@ window.onload = function () {
 		toggleBtn.innerHTML = body.classList.contains("dark-theme")
 			? "light"
 			: "dark";
+		localStorage.setItem(
+			"theme",
+			body.classList.contains("dark-theme") ? "dark" : "light"
+		);
 	});
+
+	localStorage.getItem("theme") === "dark"
+		? body.classList.add("dark-theme")
+		: body.classList.remove("dark-theme");
 
 	result.addEventListener("click", () => {
 		navigator.clipboard.writeText(result.innerText);
