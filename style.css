@@ -60,13 +60,14 @@ code {
 
 #toggle-btn {
 	padding: 5px 10px;
-	background-color: #ccc;
-	border: none;
+	background-color: #e0e0e0;
+	border: 1px solid #4b4b4b;
 	border-radius: 5px;
 	cursor: pointer;
 }
 
 .dark-theme #toggle-btn {
-	background-color: #f2f2f2;
-	color: #333;
+	background-color: #4b4b4b;
+	color: #e0e0e0;
+	border: 1px solid #e0e0e0;
 }
