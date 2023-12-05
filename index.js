@@ -1,4 +1,28 @@
 /**
+ * Initializes the window.onload event handler to format and display an array.
+ *
+ * @param {HTMLElement} input - The input element that contains the array.
+ * @param {HTMLElement} result - The result element where the formatted array will be displayed.
+ * @return {void}
+ */
+window.onload = function () {
+	const input = document.getElementById("input");
+	const result = document.getElementById("result");
+
+	const formatAndDisplayArray = () => {
+		if (input && result) {
+			result.innerHTML = JSON.stringify(formatArray(input.value));
+		}
+	};
+
+	if (input) {
+		input.addEventListener("input", formatAndDisplayArray);
+		input.addEventListener("change", formatAndDisplayArray);
+		input.addEventListener("blur", formatAndDisplayArray);
+	}
+};
+
+/**
  * Checks if a value is empty.
  *
  * @param {any} value - The value to check.
@@ -15,19 +39,15 @@ function isEmpty(value) {
 		(typeof value === "object" && Object.keys(value).length === 0)
 	);
 }
-function apply() {
-	let input = document.getElementById("input").value;
-	console.log(formatArray(input));
-}
 
 /**
- * Formats an array by removing empty elements, trimming each element, and converting it to an array of strings.
+ * Formats an array by removing empty elements and trimming whitespace.
  *
- * @param {string} input - The input array to be formatted.
- * @return {string[]} - The formatted array of strings.
+ * @param {Array|string} input - The input array or string to be formatted.
+ * @return {Array} - The formatted array.
  */
 function formatArray(input) {
-	if (isEmpty(input)) return "";
+	if (isEmpty(input)) return [];
 
 	if (Array.isArray(input) && typeof input[0] === "string") {
 		return input;
